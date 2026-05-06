@@ -6,7 +6,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
-import AIChatWidget from "./components/AIChatWidget";
+import ChatWidget from "./components/ChatWidget";
 import CustomCursor from "./components/CustomCursor";
 import SchedulePage from "./components/SchedulePage";
 import "./App.css";
@@ -22,7 +22,7 @@ function MainLayout() {
       <Projects />
       <Experience />
       <Contact />
-      <AIChatWidget />
+      <ChatWidget />
     </div>
   );
 }

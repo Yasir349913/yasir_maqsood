@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { FaRobot, FaTimes, FaPaperPlane } from "react-icons/fa";
 
-export default function AIChatWidget() {
+export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
