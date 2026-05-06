@@ -1,19 +1,18 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap");
-@import "tailwindcss";
+
+/* Google Fonts (ALL at top) */
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap");
 
 /* ============================================================
    YASIR MAQSOOD PORTFOLIO — DESIGN SYSTEM
    Theme: Deep Charcoal + Warm Gold + Ivory
    ============================================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&display=swap");
-
 :root {
   /* Backgrounds */
-  --bg-primary: #0c0c0e; /* near-black with warm tint */
-  --bg-secondary: #111116; /* cards/sections */
-  --bg-tertiary: #18181f; /* elevated cards */
+  --bg-primary: #0c0c0e;
+  --bg-secondary: #111116;
+  --bg-tertiary: #18181f;
   --bg-glass: rgba(255, 255, 255, 0.03);
 
   /* Accent — Warm Gold */
@@ -24,9 +23,9 @@
   --gold-border: rgba(201, 168, 76, 0.25);
 
   /* Text */
-  --text-primary: #f0ede6; /* warm ivory */
-  --text-secondary: #8a8880; /* warm gray */
-  --text-muted: #4a4845; /* very muted */
+  --text-primary: #f0ede6;
+  --text-secondary: #8a8880;
+  --text-muted: #4a4845;
 
   /* Borders */
   --border: rgba(255, 255, 255, 0.07);
@@ -37,6 +36,7 @@
   --font-body: "Syne", sans-serif;
 }
 
+/* Reset */
 *,
 *::before,
 *::after {
