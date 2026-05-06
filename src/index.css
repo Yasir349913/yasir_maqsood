@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap");
+@import "tailwindcss";
+
+/* ============================================================
+   YASIR MAQSOOD PORTFOLIO — DESIGN SYSTEM
+   Theme: Deep Charcoal + Warm Gold + Ivory
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&display=swap");
+
+:root {
+  /* Backgrounds */
+  --bg-primary: #0c0c0e; /* near-black with warm tint */
+  --bg-secondary: #111116; /* cards/sections */
+  --bg-tertiary: #18181f; /* elevated cards */
+  --bg-glass: rgba(255, 255, 255, 0.03);
+
+  /* Accent — Warm Gold */
+  --gold: #c9a84c;
+  --gold-bright: #e8c76a;
+  --gold-muted: #8a6e30;
+  --gold-glow: rgba(201, 168, 76, 0.15);
+  --gold-border: rgba(201, 168, 76, 0.25);
+
+  /* Text */
+  --text-primary: #f0ede6; /* warm ivory */
+  --text-secondary: #8a8880; /* warm gray */
+  --text-muted: #4a4845; /* very muted */
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(255, 255, 255, 0.14);
+
+  /* Fonts */
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Syne", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold);
+  color: #0c0c0e;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-muted);
+  border-radius: 2px;
+}
