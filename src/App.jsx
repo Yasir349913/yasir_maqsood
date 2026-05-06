@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 import ChatWidget from "./components/ChatWidget";
 import CustomCursor from "./components/CustomCursor";
 import SchedulePage from "./components/SchedulePage";
-import "./App.css";
+import "./index.css";
 
 function MainLayout() {
   return (
