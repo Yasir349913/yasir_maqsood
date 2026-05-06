@@ -26,7 +26,7 @@ const experiences = [
     title: "Executive Member (Web Domain)",
     organization: "Google Developers Group (GDG)",
     period: "Nov 2025 – Present",
-    location: "Pakistan",
+    location: "UCP, Lahore",  
     description:
       "Organizing developer events and helping community grow in web technologies.",
     tech: [FaReact],

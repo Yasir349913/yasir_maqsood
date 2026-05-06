@@ -1,18 +1,11 @@
 import { useState } from "react";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaCheckCircle,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdCheckCircle } from "react-icons/md";
 import { sendContactMessage } from "../services/contact.service";
 import { useScrollReveal } from "../hooks/hooks";
 
 const socials = [
-  {
-    icon: FaGithub,
-    label: "GitHub",
-    href: "https://github.com/Yasir349913",
-  },
+  { icon: FaGithub, label: "GitHub", href: "https://github.com/Yasir349913" },
   {
     icon: FaLinkedin,
     label: "LinkedIn",
@@ -31,6 +24,7 @@ const inputStyle = {
   outline: "none",
   transition: "border-color 0.3s ease, background 0.3s ease",
   fontFamily: "'Syne', sans-serif",
+  boxSizing: "border-box",
 };
 
 const labelStyle = {
@@ -52,45 +46,112 @@ function SuccessCard({ onReset }) {
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        padding: "4rem 2rem",
+        padding: "3.5rem 2rem",
         background: "rgba(201,168,76,0.03)",
-        border: "0.5px solid rgba(201,168,76,0.2)",
+        border: "0.5px solid rgba(201,168,76,0.25)",
         borderRadius: "2px",
         animation: "fadeUp 0.5s ease forwards",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <FaCheckCircle
-        style={{ fontSize: "2.5rem", color: "#C9A84C", marginBottom: "1.25rem" }}
+      {/* Glow effect */}
+      <div
+        style={{
+          position: "absolute",
+          top: "-40px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "120px",
+          height: "120px",
+          background: "rgba(201,168,76,0.08)",
+          borderRadius: "50%",
+          filter: "blur(30px)",
+          pointerEvents: "none",
+        }}
       />
+
+      {/* Icon */}
+      <div
+        style={{
+          width: "56px",
+          height: "56px",
+          borderRadius: "50%",
+          border: "0.5px solid rgba(201,168,76,0.3)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginBottom: "1.5rem",
+          background: "rgba(201,168,76,0.06)",
+        }}
+      >
+        <MdCheckCircle style={{ fontSize: "1.75rem", color: "#C9A84C" }} />
+      </div>
+
+      <p
+        style={{
+          fontSize: "0.65rem",
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          color: "#C9A84C",
+          marginBottom: "0.75rem",
+          fontWeight: "500",
+        }}
+      >
+        Message Received
+      </p>
+
       <h3
         style={{
           fontFamily: "'Instrument Serif', serif",
           fontStyle: "italic",
-          fontSize: "1.5rem",
+          fontSize: "1.75rem",
           color: "#F0EDE6",
-          marginBottom: "0.5rem",
+          marginBottom: "0.75rem",
+          fontWeight: 400,
+          lineHeight: 1.2,
         }}
       >
-        Message Sent
+        Talk soon.
       </h3>
+
       <p
         style={{
-          fontSize: "0.875rem",
+          fontSize: "0.85rem",
           color: "#8A8880",
-          lineHeight: 1.7,
-          marginBottom: "0.5rem",
+          lineHeight: 1.8,
+          marginBottom: "0.4rem",
+          maxWidth: "260px",
         }}
       >
-        Thanks for reaching out. I'll reply within{" "}
+        Your message is on its way. I'll get back to you within{" "}
         <span style={{ color: "#C9A84C" }}>24 hours</span>.
       </p>
-      <p style={{ fontSize: "0.8rem", color: "#4A4845", marginBottom: "2rem" }}>
-        In the meantime, check out my work on GitHub.
+
+      <p
+        style={{
+          fontSize: "0.78rem",
+          color: "#4A4845",
+          marginBottom: "2.25rem",
+        }}
+      >
+        Check out my GitHub while you wait.
       </p>
+
+      {/* Divider */}
+      <div
+        style={{
+          width: "40px",
+          height: "0.5px",
+          background: "rgba(255,255,255,0.08)",
+          marginBottom: "2rem",
+        }}
+      />
+
       <button
         onClick={onReset}
         style={{
-          fontSize: "0.7rem",
+          fontSize: "0.68rem",
           letterSpacing: "0.12em",
           textTransform: "uppercase",
           padding: "0.6rem 1.5rem",
@@ -111,9 +172,15 @@ function SuccessCard({ onReset }) {
           e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
         }}
       >
-        Send another message
+        Send another →
       </button>
-      <style>{`@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }`}</style>
+
+      <style>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </div>
   );
 }
@@ -222,15 +289,11 @@ export default function Contact() {
               marginBottom: "2.5rem",
             }}
           >
-            Open to associate roles, freelance projects, and startup collaborations.
-            Have an idea or opportunity? Let&apos;s talk.
+            Open to associate roles, freelance projects, and startup
+            collaborations. Have an idea or opportunity? Let&apos;s talk.
           </p>
 
-          {/* Socials — icon only */}
-          <div
-            data-reveal
-            style={{ display: "flex", gap: "1rem" }}
-          >
+          <div data-reveal style={{ display: "flex", gap: "1rem" }}>
             {socials.map(({ icon: Icon, label, href }) => (
               <a
                 key={label}
@@ -273,11 +336,25 @@ export default function Contact() {
           ) : (
             <form
               onSubmit={handleSubmit}
-              style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "1.25rem",
+              }}
             >
               {[
-                { label: "Name", name: "name", type: "text", placeholder: "Your name" },
-                { label: "Email", name: "email", type: "email", placeholder: "your@email.com" },
+                {
+                  label: "Name",
+                  name: "name",
+                  type: "text",
+                  placeholder: "Your name",
+                },
+                {
+                  label: "Email",
+                  name: "email",
+                  type: "email",
+                  placeholder: "your@email.com",
+                },
               ].map((field) => (
                 <div key={field.name}>
                   <label style={labelStyle}>{field.label}</label>
@@ -313,7 +390,8 @@ export default function Contact() {
                 disabled={status === "sending"}
                 style={{
                   padding: "0.875rem",
-                  background: status === "sending" ? "rgba(201,168,76,0.4)" : "#C9A84C",
+                  background:
+                    status === "sending" ? "rgba(201,168,76,0.4)" : "#C9A84C",
                   color: "#0C0C0E",
                   border: "none",
                   borderRadius: "2px",
