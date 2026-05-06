@@ -25,9 +25,12 @@ export default function ChatWidget() {
     setInput("");
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/chat", {
-        message: msg,
-      });
+      const res = await axios.post(
+        "https://portfolio-backend-nine-gilt.vercel.app/api/chat",
+        {
+          message: msg,
+        },
+      );
       setMessages((prev) => [
         ...prev,
         { role: "assistant", content: res.data.reply },
