@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function CustomCursor() {
+export default function customCursor() {
   const dotRef = useRef(null);
   const ringRef = useRef(null);
 
